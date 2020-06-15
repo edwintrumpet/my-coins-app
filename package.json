@@ -4,8 +4,9 @@
   "description": "App to manage personal accounts",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
     "start": "webpack-dev-server --config webpack.dev.js",
+    "build:dll": "webpack --config webpack.config.js",
+    "build": "webpack --config webpack.prod.js",
     "lint": "eslint ./src/",
     "lint:fix": "eslint ./src/ --fix",
     "test": "echo \"Error: no test specified\" && exit 1"

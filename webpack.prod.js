@@ -1,6 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable */
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -26,6 +27,10 @@ module.exports = {
       title: 'my coins',
       hash: true,
       template: path.resolve(__dirname, 'public/index.html'),
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: require('./modules-manifest.json'),
+      context: path.resolve(__dirname, 'src'),
     }),
   ],
 };
